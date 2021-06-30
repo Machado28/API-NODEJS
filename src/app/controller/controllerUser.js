@@ -11,10 +11,11 @@ export default {
        } 
        await  Mail.sendMail({
           from:'DLine-Code <auroradasilva@gmail.com',
-          to:`${name}` `<${email}>`,
+          to:`${name} <${email}>`,
           subject:'TESTE DE ENVIO DE MENSAGEM POR EMAIL',
-          html:`ola, ${name}, seja bem-vindo a Dline-Code`
-       })
+          html:`ola, ${name}, voce conseguiu usar os nossos serviços! parabéns!`
+       }) 
        return res.send({user})
+
    }
 }
