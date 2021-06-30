@@ -1,3 +1,5 @@
+import Mail from '../lib/Mail'
+
 export default {
    async store (req,res){
        const { name, email,password } = req.body;
@@ -6,7 +8,13 @@ export default {
           name,
           email,
           password,
-       }
+       } 
+       await  Mail.sendMail({
+          from:'DLine-Code <auroradasilva@gmail.com',
+          to:`${name}` `<${email}>`,
+          subject:'TESTE DE ENVIO DE MENSAGEM POR EMAIL',
+          html:`ola, ${name}, seja bem-vindo a Dline-Code`
+       })
        return res.send({user})
    }
 }
